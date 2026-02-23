@@ -58,17 +58,17 @@
 
         <!-- second  -->
         <div class="space-x-2 mb-3">
-            <button onclick="showOnly('card')" id="all-butten" class="btn btn-soft btn-primary   text-black hover:text-white">All</button>
-            <button onclick="showOnly('not_available-job')" id="interview-butten"
+            <button onclick="filterjob('all')" id="all-butten" class="btn btn-soft btn-primary   text-black hover:text-white">All</button>
+            <button onclick="filterjob('interview')" id="interview-butten"
                 class="btn btn-soft btn-primary text-black hover:text-white">Interview</button>
-            <button onclick="showOnly('not_available-job')" id="rejected-butten" class="btn btn-soft btn-primary text-black hover:text-white">Rejected</button>
+            <button onclick=" filterjob('rejected')" id="rejected-butten" class="btn btn-soft btn-primary text-black hover:text-white">Rejected</button>
         </div>
 
         <!-- third  -->
 
 
-        <!-- when Interview and Rejeted butten working   -->
-        <div id="not_available-job" class="p-20 bg-base-100  rounded-sm mb-3 hidden">
+        <!-- when first time Interview and Rejeted butten working   -->
+        <div id="empty-state" class="p-20 bg-base-100  rounded-sm mb-3 hidden">
             <div class="text-center ">
                 <img src="./picture/jobs.png" alt="" class="mx-auto">
                 <h1 class="text-lg font-bold">No jobs available</h1>
@@ -81,7 +81,7 @@
 
         <div id="card">
             <!-- 1 -->
-            <div id="1" class="p-4 bg-base-100  rounded-sm mb-3">
+            <div  class=" job-card  p-4 bg-base-100  rounded-sm mb-3">
                 <div class="flex justify-between py-[1.125rem]">
                     <div>
                         <h1 class="text-lg font-bold">Mobil First Corp</h1>
@@ -99,16 +99,16 @@
 
                 <div></div>
 
-                <p class="pb-3">Build cross-platform mobile applications using React Native. Work on products used by
+                <p class="job-description pb-3">Build cross-platform mobile applications using React Native. Work on products used by
                     millions of users worldwide.</p>
                 <div>
-                    <button  class="interview-btn btn btn-outline btn-success">Interview</button>
-                    <button  class="rejected-btn  btn btn-outline btn-secondary">Rejected</button>
+                    <button onclick="updateStatus(this , 'interview')" class="interview-btn btn btn-outline btn-success">Interview</button>
+                    <button onclick="updateStatus(this , 'rejected')" class="rejected-btn  btn btn-outline btn-secondary">Rejected</button>
                 </div>
             </div>
 
             <!-- 2  -->
-            <div class="p-4 bg-base-100  rounded-sm mb-3">
+            <div class=" job-card p-4 bg-base-100  rounded-sm mb-3">
                 <div class="flex justify-between py-[1.125rem]">
                     <div>
                         <h1 class="text-lg font-bold">WebFlow Agency</h1>
@@ -130,17 +130,17 @@
 
                 <div></div>
 
-                <p class="pb-3">Create stunning web experiences for high-profile clients. Must have portfolio and
+                <p class="job-description pb-3">Create stunning web experiences for high-profile clients. Must have portfolio and
                     experience
                     with modern web design trends.</p>
                 <div>
-                    <button  class="interview-btn btn btn-outline btn-success">Interview</button>
-                    <button class="rejected-btn btn btn-outline btn-secondary">Rejected</button>
+                    <button onclick="updateStatus(this , 'interview')" class="interview-btn btn btn-outline btn-success">Interview</button>
+                    <button onclick="updateStatus(this , 'rejected')" class="rejected-btn  btn btn-outline btn-secondary">Rejected</button>
                 </div>
             </div>
 
             <!-- 3 -->
-            <div class="p-4 bg-base-100  rounded-sm mb-3">
+            <div class=" job-card p-4 bg-base-100  rounded-sm mb-3">
                 <div class="flex justify-between py-[1.125rem]">
                     <div>
                         <h1 class="text-lg font-bold">DataViz Solutions</h1>
@@ -162,18 +162,18 @@
 
                 <div></div>
 
-                <p class="pb-3">Transform complex data into compelling visualizations. Required skills: D3.js, React,
+                <p class="job-description pb-3">Transform complex data into compelling visualizations. Required skills: D3.js, React,
                     and
                     strong analytical thinking.
                 </p>
                 <div>
-                    <button  class="interview-btn btn btn-outline btn-success">Interview</button>
-                    <button class="rejected-btn btn btn-outline btn-secondary">Rejected</button>
+                    <button onclick="updateStatus(this , 'interview')" class="interview-btn btn btn-outline btn-success">Interview</button>
+                    <button onclick="updateStatus(this , 'rejected')" class="rejected-btn  btn btn-outline btn-secondary">Rejected</button>
                 </div>
             </div>
 
             <!-- 4 -->
-            <div class="p-4 bg-base-100  rounded-sm mb-3">
+            <div class=" job-card p-4 bg-base-100  rounded-sm mb-3">
                 <div class="flex justify-between py-[1.125rem]">
                     <div>
                         <h1 class="text-lg font-bold">CloudFirst Inc</h1>
@@ -195,17 +195,17 @@
 
                 <div></div>
 
-                <p class="pb-3">Design and maintain scalable backend systems using Python and AWS. Work with modern
+                <p class="job-description pb-3">Design and maintain scalable backend systems using Python and AWS. Work with modern
                     DevOps
                     practices and cloud infrastructure.</p>
                 <div>
-                    <button  class="interview-btn btn btn-outline btn-success">Interview</button>
-                    <button class="rejected-btn btn btn-outline btn-secondary">Rejected</button>
+                    <button onclick="updateStatus(this , 'interview')" class="interview-btn btn btn-outline btn-success">Interview</button>
+                    <button onclick="updateStatus(this , 'rejected')" class="rejected-btn  btn btn-outline btn-secondary">Rejected</button>
                 </div>
             </div>
 
             <!-- 5 -->
-            <div class="p-4 bg-base-100  rounded-sm mb-3">
+            <div class=" job-card p-4 bg-base-100  rounded-sm mb-3">
                 <div class="flex justify-between py-[1.125rem]">
                     <div>
                         <h1 class="text-lg font-bold">Innovation Labs</h1>
@@ -227,16 +227,16 @@
 
                 <div></div>
 
-                <p class="pb-3">Create beautiful and functional user interfaces for our suite of products. Strong design
+                <p class="job-description pb-3">Create beautiful and functional user interfaces for our suite of products. Strong design
                     skills and frontend development expertise required.</p>
                 <div>
-                    <button  class="interview-btn btn btn-outline btn-success">Interview</button>
-                    <button class="rejected-btn btn btn-outline btn-secondary">Rejected</button>
+                    <button onclick="updateStatus(this , 'interview')" class="interview-btn btn btn-outline btn-success">Interview</button>
+                    <button onclick="updateStatus(this , 'rejected')" class="rejected-btn  btn btn-outline btn-secondary">Rejected</button>
                 </div>
             </div>
 
             <!-- 6 -->
-            <div class="p-4 bg-base-100  rounded-sm mb-3">
+            <div class=" job-card p-4 bg-base-100  rounded-sm mb-3">
                 <div class="flex justify-between py-[1.125rem]">
                     <div>
                         <h1 class="text-lg font-bold">MegaCorp Solutions</h1>
@@ -258,17 +258,17 @@
 
                 <div></div>
 
-                <p class="pb-3">Build enterprise applications with JavaScript and modern frameworks. We offer
+                <p class="job-description pb-3">Build enterprise applications with JavaScript and modern frameworks. We offer
                     competitive
                     compensation, health insurance, and professional development opportunities.</p>
                 <div>
-                    <button  class="interview-btn btn btn-outline btn-success">Interview</button>
-                    <button class="rejected-btn btn btn-outline btn-secondary">Rejected</button>
+                    <button onclick="updateStatus(this , 'interview')" class="interview-btn btn btn-outline btn-success">Interview</button>
+                    <button onclick="updateStatus(this , 'rejected')" class="rejected-btn  btn btn-outline btn-secondary">Rejected</button>
                 </div>
             </div>
 
             <!-- 7 -->
-            <div class="p-4 bg-base-100  rounded-sm mb-3">
+            <div class=" job-card p-4 bg-base-100  rounded-sm mb-3">
                 <div class="flex justify-between py-[1.125rem]">
                     <div>
                         <h1 class="text-lg font-bold">StartupXYZ</h1>
@@ -290,16 +290,16 @@
 
                 <div></div>
 
-                <p class="pb-3">Join our fast-growing startup and work on our core platform. Experience with Node.js and
+                <p class="job-description  pb-3">Join our fast-growing startup and work on our core platform. Experience with Node.js and
                     React required. Great benefits and equity package included.</p>
                 <div>
-                    <button  class="interview-btn btn btn-outline btn-success">Interview</button>
-                    <button class="rejected-btn btn btn-outline btn-secondary">Rejected</button>
+                    <button onclick="updateStatus(this , 'interview')" class="interview-btn btn btn-outline btn-success">Interview</button>
+                    <button onclick="updateStatus(this , 'rejected')" class="rejected-btn  btn btn-outline btn-secondary">Rejected</button>
                 </div>
             </div>
 
             <!-- 8 -->
-            <div class="p-4 bg-base-100  rounded-sm mb-3">
+            <div class=" job-card p-4 bg-base-100  rounded-sm mb-3">
                 <div class="flex justify-between py-[1.125rem]">
                     <div>
                         <h1 class="text-lg font-bold">TechCorp Industries</h1>
@@ -319,13 +319,13 @@
 
 
 
-                <div></div>
+                
 
-                <p class="pb-3">We are looking for an experienced Frontend Developer to build scalable web applications
+                <p class="job-description pb-3">We are looking for an experienced Frontend Developer to build scalable web applications
                     using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
                 <div>
-                    <button  class="interview-btn btn btn-outline btn-success">Interview</button>
-                    <button class="rejected-btn btn btn-outline btn-secondary">Rejected</button>
+                    <button onclick="updateStatus(this , 'interview')" class="interview-btn btn btn-outline btn-success">Interview</button>
+                    <button onclick="updateStatus(this , 'rejected')" class="rejected-btn  btn btn-outline btn-secondary">Rejected</button>
                 </div>
             </div>
         </div>
