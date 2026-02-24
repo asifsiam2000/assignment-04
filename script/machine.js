@@ -1,41 +1,3 @@
-// window.addEventListener("DOMContentLoaded", () => {
-//   filterjob("all");
-// });
-// function updateStatus(button, status) {
-//   const card = button.closest(".job-card");
-//   card.dataset.status = status;
-// }
-// function filterjob(status) {
-//   const cards = document.querySelectorAll(".job-card");
-//   const emptyState = document.getElementById("empty-state");
-
-//   let visibleCount = 0;
-
-  
-//   for (let i = 0; i < cards.length; i++) {
-
-//     const card = cards[i];
-
-//     if (status === "all" || card.dataset.status === status) {
-//       card.style.display = "block";
-//       visibleCount++;
-//     }
-//     else {
-//       card.style.display = "none";
-//     }
-//     }
-//     // console.log("visibol card", visibleCount);
-//   if (visibleCount === 0) {
-//     emptyState.style.display = "block";
-//   }
-//   else {
-//     emptyState.style.display = "none";
-//   }
-// }
-
-
-
-
 
 // variable diclearation 
 let currentInterview = 0;
@@ -90,7 +52,7 @@ function add_new_button(clickedButton, statusText, statusClass) {
 
     const statusButton = document.createElement('button');
     statusButton.innerText = statusText;
-    statusButton.classList.add('status-btn', 'btn', 'mb-3', statusClass, 'btn-sm'); // btn-sm দিয়েছি দেখতে সুন্দর লাগবে
+    statusButton.classList.add('status-btn', 'btn', 'mb-3', statusClass, 'btn-sm'); 
 
     parentCard.insertBefore(statusButton, description);
 }
@@ -124,3 +86,43 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
+// counting job for all,  interview , rejected button 
+document.getElementById('all-butten').addEventListener('click', function () {
+    const total_job = document.getElementById('total-job');
+    const avail_job = document.getElementById('avail-job');
+    avail_job.innerText = total_job.innerText;
+})
+
+document.getElementById('interview-butten').addEventListener('click', function () {
+    const avail_job = document.getElementById('avail-job');
+    const total_interview = document.getElementById('interview-cnt');
+    avail_job.innerText = total_interview.innerText;
+})
+
+document.getElementById('rejected-butten').addEventListener('click', function () {
+    const avail_job = document.getElementById('avail-job');
+    const total_interview = document.getElementById('rejected-cnt');
+    avail_job.innerText = total_interview.innerText;
+})
+
+
+// delet card  
+
+  
+const deleteButtons = document.querySelectorAll('.delet-card');
+
+for (let i = 0; i < deleteButtons.length; i++) {
+    deleteButtons[i].addEventListener('click', function () {
+        
+        const targetCard = this.closest('.job-card'); 
+
+        if (targetCard) {
+            let totalJobElement = document.getElementById('total-job');
+            let currentTotal = parseInt(totalJobElement.innerText);
+
+            totalJobElement.innerText = Math.max(0, currentTotal - 1);
+
+            targetCard.remove();
+        }
+    });
+}
