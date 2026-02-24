@@ -87,6 +87,9 @@ window.addEventListener("DOMContentLoaded", () => {
 // counting job for all,  interview , rejected button 
 document.getElementById('all-butten').addEventListener('click', function () {
     const total_job = document.getElementById('total-job');
+
+    console.log(total_job.innerText);
+
     const avail_job = document.getElementById('avail-job');
     avail_job.innerText = total_job.innerText;
 })
@@ -129,6 +132,8 @@ for (let i = 0; i < deleteButtons.length; i++) {
             let currentTotal = parseInt(totalJobElement.innerText);
 
             totalJobElement.innerText = Math.max(0, currentTotal - 1);
+            const avail_job = document.getElementById('avail-job');
+            avail_job.innerText = totalJobElement.innerText;
 
             targetCard.remove();
         }
