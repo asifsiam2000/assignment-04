@@ -1,4 +1,4 @@
-  1 . Difference between getElementById, getElementsByClassName, querySelector, and querySelectorAll ?
+  1. Difference between getElementById, getElementsByClassName, querySelector, and querySelectorAll ?
 
   Answer => 
     These methods are used to select HTML elements from the DOM in JavaScript.
@@ -21,7 +21,7 @@
         Return type = NodeList   
 
 
-2 . 2. How do you create and insert a new element into the DOM?
+   2. How do you create and insert a new element into the DOM?
 
  Answer =>
     To creat and insert a new element into the DOM following three steps:
@@ -51,7 +51,7 @@
      ↓
     button ← clicked here
 
- 4 .4. What is Event Delegation in JavaScript? Why is it useful?
+ 4. What is Event Delegation in JavaScript? Why is it useful?
     event delegatyion is a technique where add a event listener to a parent element and it handles events for its child element using event bubbling .
         
         it is useful beacuse 
