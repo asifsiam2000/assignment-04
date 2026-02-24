@@ -1,15 +1,17 @@
-const allInterviewButton = document.querySelectorAll('.interview-btn');
-// console.log(allInterviewButton);
+// let count = 0;
 
-allInterviewButton.forEach((button) => {
-    button.addEventListener('click', function () {
+// const interviewButtons = document.querySelectorAll(".interview-btn");
+// const changeValue = document.getElementById('interview-cnt');
 
-        // interview increses 
-        const job = get_value('get-intervew');
-        const job_number = Number(job) + 1;
-        set_value_interview(job_number);
+// for (let i = 0; i < interviewButtons.length; i++) {
+//     interviewButtons[i].addEventListener('click', function () {
+//         add_new_button(this, "INTERVIEW", "btn-success");
         
-        // new button add 
-        add_new_button(this, "INTERVIEW", "btn-success");
-    });
-});
+//         if (this.getAttribute('data-already-clicked') === 'true') {
+//             return; 
+//         }
+//         count++;
+//         changeValue.innerText = count;
+//         this.setAttribute('data-already-clicked', 'true');
+//     });
+// }

@@ -1,14 +1,20 @@
-const allRejectdedButton = document.querySelectorAll('.rejected-btn');
+// {
+//    let cnt = 0;
+//    const rejectedButton = document.querySelectorAll(".rejected-btn");
+//    const changeValue = document.getElementById('rejected-cnt');
 
-allRejectdedButton.forEach((button) => {
-    button.addEventListener('click', function () {
+//    for (let i = 0; i < rejectedButton.length; i++) {
+//         rejectedButton[i].addEventListener('click', function () {
+//             add_new_button(this, "REJECTED", "btn-error");
+        
+//             if (this.getAttribute('data-already-clicked') === 'true') {
+//                return;
+//             }
+//             cnt++;
+//             changeValue.innerText = cnt;
+//             this.setAttribute('data-already-clicked', 'true');
+//         });
+//     }
+// }
 
-        // interview add 
-        const job = get_value('get-rejected');
-        const job_number = Number(job) + 1;
-        set_value_rejected(job_number);
 
-        // button add 
-        add_new_button(this, "REJECTED", "btn-error");
-    });
-});
