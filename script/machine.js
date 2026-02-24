@@ -22,8 +22,6 @@ function updateStatus(button, status) {
     } else if (previousStatus === 'rejected') {
         currentRejected--;
     }
-
-   
     if (status === 'interview') {
         currentInterview++;
         add_new_button(button, "INTERVIEW", "btn-success");
@@ -96,13 +94,23 @@ document.getElementById('all-butten').addEventListener('click', function () {
 document.getElementById('interview-butten').addEventListener('click', function () {
     const avail_job = document.getElementById('avail-job');
     const total_interview = document.getElementById('interview-cnt');
-    avail_job.innerText = total_interview.innerText;
+    if (total_interview.innerText === '0') {
+        avail_job.innerText = '0';
+        return;
+    }
+    else {
+        avail_job.innerText = total_interview.innerText + " of 8 ";
+    }
 })
 
 document.getElementById('rejected-butten').addEventListener('click', function () {
     const avail_job = document.getElementById('avail-job');
     const total_interview = document.getElementById('rejected-cnt');
-    avail_job.innerText = total_interview.innerText;
+    if (total_interview.innerText === '0') {
+        avail_job.innerText = '0';
+        return;
+    }
+    else avail_job.innerText = total_interview.innerText + " of 8 ";
 })
 
 
